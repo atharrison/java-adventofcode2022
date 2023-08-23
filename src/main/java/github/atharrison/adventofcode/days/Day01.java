@@ -11,7 +11,7 @@ import github.atharrison.adventofcode.days.Day;
 public class Day01 extends Day {
 
     public Day01() {
-        super(2022, 1);
+        super(2022, "01");
     }
 
     public void solvePart1(String data) {

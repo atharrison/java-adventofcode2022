@@ -8,11 +8,13 @@ public abstract class Day {
     
 
     protected final int year;
-    protected final int day;
+    protected final String day;
+    protected final boolean useSample;
 
-    public Day(int year, int day) {
+    public Day(int year, String day, boolean useSample) {
         this.year = year;
         this.day = day;
+        this.useSample = useSample;
       }
 
     public File getResource(String path) {
@@ -20,7 +22,11 @@ public abstract class Day {
     }
 
     public String getInputPath() {
-        return String.format("days/day01_input.txt", "01");
+        String suffix = "input";
+        if (this.useSample) {
+            suffix = "sample";
+        }
+        return String.format("days/day%s_%s.txt", this.day, suffix);
     }
 
     public String getResourceAsString(String resource) {
